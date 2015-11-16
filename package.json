@@ -4,7 +4,8 @@
   "description": "A voting system made with react and es6",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js  --recursive",
+    "test:watch": "npm run test -- --watch"
   },
   "author": "Lucas Maia e Silva",
   "license": "ISC",
@@ -13,13 +14,15 @@
     "babel-core": "^6.1.21",
     "babel-preset-es2015": "^6.1.18",
     "chai": "^3.4.1",
+    "chai-immutable": "^1.5.2",
     "mocha": "^2.3.4"
   },
-  "scripts": {
-    "test": "mocha --compilers js:babel-core/register --recursive",
-    "test:watch": "npm run test -- --watch"
-  },
   "babel": {
-    "presets": ["es2015"]
+    "presets": [
+      "es2015"
+    ]
+  },
+  "dependencies": {
+    "immutable": "^3.7.5"
   }
 }
